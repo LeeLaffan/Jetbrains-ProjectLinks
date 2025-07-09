@@ -8,6 +8,10 @@ import com.intellij.openapi.ui.popup.JBPopupFactory
 import java.nio.file.Files
 import java.nio.file.Paths
 
+// TODO
+// - Allow setting format
+// - Allow setting scan all md files + depth
+
 class ProjectLinksAction : AnAction() {
     override fun actionPerformed(event: AnActionEvent) {
         val projectBasePath = event.project?.basePath ?: return
