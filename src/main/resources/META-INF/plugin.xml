@@ -24,7 +24,10 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-
+        <applicationService serviceImplementation="com.example.projectlinks.settings.ProjectLinksSettingsState"/>
+        <applicationConfigurable parentId="tools" instance="com.example.projectlinks.settings.ProjectLinksSettingsConfigurable"
+                               id="com.example.projectlinks.settings.ProjectLinksSettingsConfigurable"
+                               displayName="Project Links"/>
     </extensions>
 
     <actions>
