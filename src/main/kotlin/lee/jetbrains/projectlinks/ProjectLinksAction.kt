@@ -86,6 +86,10 @@ class ProjectLinksAction : AnAction() {
 
     fun getLinkFromLine(line: String): Pair<String, String>? {
         val openBracket = line.indexOf('[')
+        // Skip image links (those prefixed with '!' character)
+        if (openBracket > 0 && line[openBracket - 1] == '!') {
+            return null
+        }
         val closeBracket = line.indexOf(']', openBracket + 1)
         if (openBracket == -1 || closeBracket == -1 || closeBracket + 1 >= line.length || line[closeBracket + 1] != '(')
             return null

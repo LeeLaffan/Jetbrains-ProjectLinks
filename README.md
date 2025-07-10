@@ -7,16 +7,6 @@ Selecting an entry will open the link in your default browser.
 
 ## Demo
 
-Some test links:
-
-- [Google](https://www.google.com)
-- [Wikipedia Function](https://en.wikipedia.org/wiki/Function_(mathematics))
-- [JetBrains](https://www.jetbrains.com)
-- [Rider IDE](https://www.jetbrains.com/rider/)
-- [Markdown Guide](https://www.markdownguide.org/basic-syntax/)
-
-And here is the tool window the plugin provides:
-
 ![image](resources/Demo.png)
 
 ## Settings
