@@ -2,9 +2,9 @@
 <idea-plugin>
     <id>lee.jetbrains.ProjectLinks</id>
 
-    <name>Project Links</name>
+    <name>ProjectLinks</name>
 
-    <vendor url="https://github.com/LeeLaffan/Jetbrains-ProjectLinks">YourCompany</vendor>
+    <vendor url="https://github.com/LeeLaffan/Jetbrains-ProjectLinks">Lee Laffan</vendor>
 
     <description><![CDATA[
         This plugin reads the README.md file of the current project and extracts links from it. <br/>

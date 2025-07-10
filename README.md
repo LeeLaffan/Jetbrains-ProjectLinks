@@ -1,8 +1,10 @@
-# Sample Project
+# ProjectLinks
 
-This is a test project to demonstrate markdown link parsing.
+This is a plugin for JetBrains editors that will scan the README.md file at the root of the project, finding links and displaying them in a tool window.
 
-## Links
+- [GitHub](resources/demo.png)
+ 
+## Test Links
 
 - [Google](https://www.google.com)
 - [Wikipedia Function](https://en.wikipedia.org/wiki/Function_(mathematics))
@@ -10,6 +12,3 @@ This is a test project to demonstrate markdown link parsing.
 - [Rider IDE](https://www.jetbrains.com/rider/)
 - [Markdown Guide](https://www.markdownguide.org/basic-syntax/)
 
-## Notes
-
-Some links contain parentheses in the URL, like the Wikiped
