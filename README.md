@@ -21,7 +21,11 @@ And here is the tool window the plugin provides:
 
 ## Settings
 
-You can configure the plugin in the settings dialog. The following options are available:
+The following settings are available in the plugin:
+
+![image](resources/Settings.png)
+
+### Overview
 
 | Setting          | Description                                    | Default   |
 |------------------|------------------------------------------------|-----------|
