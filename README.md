@@ -1,10 +1,12 @@
 # ProjectLinks
 
-This is a plugin for JetBrains editors that will scan the README.md file at the root of the project, finding links and displaying them in a tool window.
+This is a plugin for JetBrains editors that will scan the README.md file at the root of the current project, finding links and displaying
+them in a
+tool window.
 
-- [GitHub](resources/demo.png)
- 
-## Test Links
+## Demo
+
+Some test links:
 
 - [Google](https://www.google.com)
 - [Wikipedia Function](https://en.wikipedia.org/wiki/Function_(mathematics))
@@ -12,3 +14,16 @@ This is a plugin for JetBrains editors that will scan the README.md file at the 
 - [Rider IDE](https://www.jetbrains.com/rider/)
 - [Markdown Guide](https://www.markdownguide.org/basic-syntax/)
 
+And here is the tool window the plugin provides:
+
+![image](resources/Demo.png)
+
+## Settings
+
+You can configure the plugin in the settings dialog. The following options are available:
+
+| Setting          | Description                                    | Default   |
+|------------------|------------------------------------------------|-----------|
+| Link Font Size   | The font size of the links in the tool window. | 16  px    |
+| Title Max Length | The title will be truncated to this length.    | 100 chars |
+| Url Max Length   | The URL will be truncated to this length.      | 50  chars |
