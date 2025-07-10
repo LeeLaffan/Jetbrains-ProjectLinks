@@ -1,6 +1,6 @@
-package com.example.projectlinks
+package lee.jetbrains.projectlinks
 
-import com.example.projectlinks.settings.ProjectLinksSettingsState
+import lee.jetbrains.projectlinks.settings.ProjectLinksSettingsState
 import com.intellij.icons.AllIcons
 import com.intellij.ide.BrowserUtil
 import com.intellij.openapi.actionSystem.AnAction
@@ -13,10 +13,6 @@ import com.intellij.ui.ColoredListCellRenderer
 import com.intellij.ui.SimpleTextAttributes
 import javax.swing.JList
 
-// TODO
-// - Allow setting format
-// - Allow setting scan all md files + depth
-
 class ProjectLinksAction : AnAction() {
     override fun actionPerformed(event: AnActionEvent) {
         // Check settings state
@@ -26,60 +22,55 @@ class ProjectLinksAction : AnAction() {
         val readmeFile = Paths.get(projectBasePath, "README.md")
 
         if (!Files.exists(readmeFile)) {
-            Messages.showMessageDialog("README.md not found at project root", "Uh oh", Messages.getErrorIcon())
-            return
-        }
-        
-        val links = getLinks(Files.readAllLines(readmeFile))
-        
-        if (links.isEmpty()) {
-            Messages.showMessageDialog("No links found in README.md", "Info", Messages.getInformationIcon())
+            Messages.showMessageDialog("README.md not found at project root: $readmeFile", "Whoops", Messages.getWarningIcon())
             return
         }
 
-        // Create display items that include both title and URL for searching
-        val displayItems = links.map { "${it.first} → ${it.second}" }
-        val displayMap = displayItems.zip(links).toMap()
+        val links = getLinks(Files.readAllLines(readmeFile))
+        if (links.isEmpty()) {
+            Messages.showMessageDialog("No links found in: $readmeFile", "Uh oh", Messages.getWarningIcon())
+            return
+        }
 
         JBPopupFactory.getInstance()
-            .createPopupChooserBuilder(displayItems)
+            .createPopupChooserBuilder(links)
             .setTitle("Project Links")
             .setItemChosenCallback { sel ->
-                val (_, url) = displayMap[sel] ?: return@setItemChosenCallback
+                val (_, url) = sel
                 BrowserUtil.browse(url)
             }
-            .setRenderer(object : ColoredListCellRenderer<String>() {
+            .setRenderer(object : ColoredListCellRenderer<Pair<String, String>>() {
                 override fun customizeCellRenderer(
-                    list: JList<out String>,
-                    value: String,
+                    list: JList<out Pair<String, String>>,
+                    value: Pair<String, String>,
                     index: Int,
                     selected: Boolean,
                     hasFocus: Boolean
                 ) {
-                    val link = displayMap[value]
-                    if (link != null) {
-                        font = list.font.deriveFont(settings.linkFontSize)
-                        icon = AllIcons.Ide.External_link_arrow
-                        append(link.first, SimpleTextAttributes.REGULAR_ATTRIBUTES)
-                        append(" | ", SimpleTextAttributes.GRAYED_ATTRIBUTES)
-                        append(link.second, SimpleTextAttributes.GRAYED_ATTRIBUTES)
-                    } else {
-                        append(value, SimpleTextAttributes.REGULAR_ATTRIBUTES)
-                    }
+                    font = list.font.deriveFont(settings.linkFontSize)
+                    icon = AllIcons.Ide.External_link_arrow
+                    getRenderedLink(value)
                 }
             })
-            .setNamerForFiltering { item ->
-                val link = displayMap[item]
-                if (link != null) {
-                    "${link.first} ${link.second}"
-                } else {
-                    item
-                }
+            .setNamerForFiltering { item -> // Allow filtering by both parts of the link
+                "${item.first} ${item.second}"
             }
             .createPopup()
             .showInFocusCenter()
     }
-    
+
+    private fun ColoredListCellRenderer<Pair<String, String>>.getRenderedLink(value: Pair<String, String>) {
+        val settings = ProjectLinksSettingsState.getInstance()
+        val titleMaxLength = settings.titleMaxLength
+        val urlMaxLength = settings.urlMaxLength
+        val clampedFirst = if (value.first.length > titleMaxLength) "${value.first.take(titleMaxLength - 3)}..." else value.first
+        val clampedSecond = if (value.second.length > urlMaxLength) "${value.second.take(urlMaxLength - 3)}..." else value.second
+
+        append(clampedFirst, SimpleTextAttributes.REGULAR_ATTRIBUTES)
+        append(" | ", SimpleTextAttributes.GRAYED_ATTRIBUTES)
+        append(clampedSecond, SimpleTextAttributes.GRAYED_ATTRIBUTES)
+    }
+
     fun getLinks(readmeLines: List<String>): List<Pair<String, String>> {
         val links = mutableListOf<Pair<String, String>>()
 

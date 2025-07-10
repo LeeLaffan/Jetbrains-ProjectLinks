@@ -1,4 +1,4 @@
-package com.example.projectlinks.settings
+package lee.jetbrains.projectlinks.settings
 
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.components.PersistentStateComponent
@@ -14,9 +14,10 @@ import com.intellij.util.xmlb.XmlSerializerUtil
     storages = [Storage("ProjectLinksSettings.xml")]
 )
 class ProjectLinksSettingsState : PersistentStateComponent<ProjectLinksSettingsState> {
-    // Add your settings properties here
-    var enableTestOption: Boolean = false
-    var linkFontSize: Float = 12.0f
+    // Default values from ProjectLinksSettingsComponent
+    var linkFontSize: Float = ProjectLinksSettingsComponent.DEF_FONT_SIZE.toFloat()
+    var titleMaxLength: Int = ProjectLinksSettingsComponent.DEF_TITLE_MAX_LENGTH
+    var urlMaxLength: Int = ProjectLinksSettingsComponent.DEF_URL_MAX_LENGTH
 
     override fun getState(): ProjectLinksSettingsState = this
 
