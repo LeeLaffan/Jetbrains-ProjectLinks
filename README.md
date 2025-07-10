@@ -3,6 +3,8 @@
 This is a plugin for JetBrains editors that will scan the README.md file at the root of the current project, finding links and displaying
 them in a tool window.
 
+Selecting an entry will open the link in your default browser.
+
 ## Demo
 
 Some test links:

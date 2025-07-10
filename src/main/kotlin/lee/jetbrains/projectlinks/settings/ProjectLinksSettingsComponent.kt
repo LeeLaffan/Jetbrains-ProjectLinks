@@ -1,6 +1,5 @@
 package lee.jetbrains.projectlinks.settings
 
-import com.intellij.ui.components.JBCheckBox
 import com.intellij.ui.components.JBLabel
 import com.intellij.util.ui.FormBuilder
 import javax.swing.JComponent
