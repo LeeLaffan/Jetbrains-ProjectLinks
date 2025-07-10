@@ -1,8 +1,7 @@
-# ProjectLinks
+# JetBrains Plugin: Project Links
 
 This is a plugin for JetBrains editors that will scan the README.md file at the root of the current project, finding links and displaying
-them in a
-tool window.
+them in a tool window.
 
 ## Demo
 
