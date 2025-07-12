@@ -7,8 +7,8 @@
     <vendor url="https://github.com/LeeLaffan/Jetbrains-ProjectLinks">Lee Laffan</vendor>
 
     <description><![CDATA[
-        This plugin will find markdown links the README.md file at the root of the current project, and display them in a tool window. <br/>
-        The tool window is fuzzy searchable. Selecting an entry will open the link in your default browser. <br/>
+        This plugin will find markdown links in the README.md file, at the root of the current project, and display them in a tool window. <br/>
+        The tool window is fuzzy searchable. Selecting an entry will open the link in the default browser. <br/>
   ]]></description>
 
     <depends>com.intellij.modules.platform</depends>

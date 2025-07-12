@@ -1,8 +1,8 @@
-# JetBrains Plugin: Project Links
+# [JetBrains Plugin: Project Links](https://plugins.jetbrains.com/plugin/27887-projectlinks)
 
-This is a plugin for JetBrains editors that will find markdown links the README.md file at the root of the current project, and display them in a tool window.
+This plugin will find markdown links in the README.md file, at the root of the current project, and display them in a tool window.
 
-The tool window is fuzzy searchable. Selecting an entry will open the link in your default browser.
+The tool window is fuzzy searchable. Selecting an entry will open the link in the default browser.
 
 ## Demo
 
@@ -21,3 +21,7 @@ The following settings are available in the plugin:
 | Link Font Size   | The font size of the links in the tool window. | 16  px    |
 | Title Max Length | The title will be truncated to this length.    | 100 chars |
 | Url Max Length   | The URL will be truncated to this length.      | 50  chars |
+
+### TODO
+
+- [TODO - Add Support for github button links](https://gist.github.com/tterb/1e12ddb9af04931e8e5ba634778b283c) 
