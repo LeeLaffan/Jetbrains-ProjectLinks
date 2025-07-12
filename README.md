@@ -25,6 +25,7 @@ The following settings are available in the plugin:
 ### TODO
 
 - [TODO - Add Support for github button links](https://gist.github.com/tterb/1e12ddb9af04931e8e5ba634778b283c)
-- TODO - Add entry to open README.md
-- TODO - Add support for non MD formatted links(with setting)
-- TODO - File Paths(with setting)
+- Add entry to open README.md
+- Add support for non MD formatted links(with setting)
+- File Paths(with setting)
+- Add Tests

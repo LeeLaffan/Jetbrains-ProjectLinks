@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "lee.jetbrains"
-version = "1.0.1"
+version = "1.0.2"
 
 repositories {
     mavenCentral()
@@ -33,7 +33,10 @@ intellijPlatform {
         }
 
         changeNotes = """
-      Initial version
+      <a href="https://github.com/LeeLaffan/Jetbrains-ProjectLinks/compare/1.0.1...1.0.2 ">Changelog</a> <br/>
+      </br>
+      - FIX: Display on active project window if available <br/>
+      - Move location in View menu <br/>
     """.trimIndent()
     }
 }
