@@ -1,4 +1,4 @@
-# [JetBrains Plugin: Project Links](https://plugins.jetbrains.com/plugin/27887-projectlinks)
+# [JetBrains Plugin: Project Links 🖇️](https://plugins.jetbrains.com/plugin/27887-projectlinks)
 
 This plugin will find markdown links in the README.md file, at the root of the current project, and display them in a tool window.
 
@@ -24,4 +24,7 @@ The following settings are available in the plugin:
 
 ### TODO
 
-- [TODO - Add Support for github button links](https://gist.github.com/tterb/1e12ddb9af04931e8e5ba634778b283c) 
+- [TODO - Add Support for github button links](https://gist.github.com/tterb/1e12ddb9af04931e8e5ba634778b283c)
+- TODO - Add entry to open README.md
+- TODO - Add support for non MD formatted links(with setting)
+- TODO - File Paths(with setting)

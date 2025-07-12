@@ -21,9 +21,9 @@
     </extensions>
 
     <actions>
-        <action id="ProjectLinksAction" class="lee.jetbrains.projectlinks.ProjectLinksAction" text="Open Project Links"
+        <action id="ProjectLinksAction" class="lee.jetbrains.projectlinks.ProjectLinksAction" text="Project Links"
                 description="Opens a selection list with links from the README.md of the current project.">
-            <add-to-group group-id="ViewMenu" anchor="last"/>
+            <add-to-group group-id="ViewMenu" anchor="after" relative-to-action="OpenInBrowserGroup"/>
         </action>
     </actions>
 </idea-plugin>
