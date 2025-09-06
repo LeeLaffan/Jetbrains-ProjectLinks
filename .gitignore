@@ -28,13 +28,8 @@ replay_pid*
 
 /build/
 /gradle/
-gradlew
-gradlew.bat
-
-.run/
 .koitlin/
 .intellijPlatform/
 .idea/
-.gradle/
 
 

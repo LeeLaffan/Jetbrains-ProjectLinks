@@ -2,6 +2,12 @@
 
 This plugin will find markdown links in the README.md file, at the root of the current project, and display them in a tool window.
 
+Will scan for markdown links in the following format:
+
+```markdown
+[Link Title](https://example.com)
+```
+
 The tool window is fuzzy searchable. Selecting an entry will open the link in the default browser.
 
 ## Demo
